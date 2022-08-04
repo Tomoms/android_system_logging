@@ -106,6 +106,18 @@ cc_defaults {
             // TODO: This is to work around b/24465209. Remove after root cause is fixed
             pack_relocations: false,
             ldflags: ["-Wl,--hash-style=both"],
+            // FIXME: Workaround LTO build breakage
+            // http://b/241259844
+            lto: {
+                never: true,
+            },
+        },
+        android_x86: {
+            // FIXME: Workaround LTO build breakage
+            // http://b/241259844
+            lto: {
+                never: true,
+            },
         },
         windows: {
             enabled: true,
